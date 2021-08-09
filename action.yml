@@ -1,0 +1,15 @@
+name: 'Test custom action'
+description: 'An action to publish generated podspecs'
+inputs:
+  generated-files-directory:
+    description: 'The directory in which podspecs are generated for RPC definitions'
+    required: true
+  pod-repository:
+    description: 'The repository in which generated podspecs would be pushed'
+    required: true
+  PAT:
+    description: 'PAT to access the private repository'
+    required: true
+runs:
+  using: node12
+  main: dist/index.js
